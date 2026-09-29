@@ -1,112 +1,153 @@
+---
+name: motion-director
+description: Direct complete code-driven motion projects by analyzing a brief, selecting the smallest effective combination of visual motion skills, assigning each style a narrative job, planning transitions and timing, and producing an implementation-ready motion direction. Use whenever a user asks for a motion video, promo, launch film, animated explainer, title sequence, social motion piece, or is unsure which visual style to use.
+license: MIT
+---
+
 # Motion Director
 
-## Purpose
+## Mission
 
-Choose and sequence motion-design styles for a brief before implementation begins.
+Act as the creative director above the individual motion skills.
 
-This skill coordinates the 15 style skills in this repository. It should not default to using all of them. Select the smallest combination that makes the story stronger.
+Do **not** start by choosing styles. Start by understanding the story. Styles are assigned only after each beat has a narrative job.
 
-## Input
+## Step 1 — Parse the brief
 
 Extract:
-- goal
 - audience
-- duration
-- aspect ratio
+- desired response
 - core message
-- required product/UI moments
-- available assets
-- tone
-- audio constraints
+- duration and aspect ratio
+- required product/UI/data moments
+- brand constraints
+- assets available
+- audio/voice constraints
 - delivery environment
+- factual claims that must not be invented
 
-## Style selection
+If information is missing, make conservative assumptions and state them in the direction rather than blocking progress.
 
-Choose styles based on the **motion engine**, not surface decoration.
+## Step 2 — Build the story spine
 
-| Need | Strong candidates |
-|---|---|
-| Immediate hook | Kinetic Typography, Brutalist Web |
-| Precision / premium editorial | Swiss / International |
-| Technical construction | Blueprint |
-| Developer / AI coding | Terminal |
-| Metrics / proof | Data Visualization |
-| Systems / modularity | Isometric |
-| Organic transformation | Liquid Morph |
-| Tactile editorial | Paper Cut / Collage |
-| Playfulness / game language | Pixel Art |
-| Human ideation | Hand-Drawn Sketch |
-| Nostalgia / technology history | Retro Futurism |
-| Premium hero moment | Cinematic 3D Type |
-| Intelligence / tracking | HUD / Sci-Fi |
-| Emergence / finale | Generative Motion |
+Express the piece as 3–7 beats.
 
-## Sequence rules
+For every beat, write:
+- what the viewer learns or feels
+- hero object/content
+- energy level
+- required duration
+- transition opportunity
 
-1. Use 1–4 styles for most short videos.
-2. Give each chosen style a narrative job.
-3. Never switch style only to show variety.
-4. Hand off between styles through a shared object, geometry, word, line, camera move, or texture.
-5. Alternate density, scale, brightness, or speed to create contrast.
-6. Reserve the most visually expensive style for a meaningful moment.
-7. End on the clearest statement, not the busiest frame.
+If a beat has no narrative purpose, remove it.
 
-## Workflow
+## Step 3 — Select motion languages
 
-### 1. Write the story spine
+Load `references/style-selection.md`.
 
-Express the video as 3–7 beats.
+Rules:
+- 1–2 styles are often enough for <15 seconds.
+- 2–4 styles are typical for 15–45 seconds.
+- Use more only when comparison of styles is itself the concept.
+- Give every style a specific job.
+- Never switch style simply to demonstrate variety.
+- Prefer one dominant style with supporting styles over equal-weight chaos.
 
-### 2. Assign visual jobs
+## Step 4 — Design handoffs
 
-For each beat, specify:
-- style
-- motion engine
-- hero object
-- transition in
-- transition out
-- duration
-- audio cue if relevant
+Load `references/sequence-patterns.md`.
 
-### 3. Challenge the choices
+A transition should ideally preserve one of:
+- shape
+- line
+- grid
+- object
+- letterform
+- camera target
+- particle/point identity
+- direction of travel
+- material/texture
+- numerical/data identity
 
-Remove any style that does not add meaning.
+Avoid default fade-to-black between every section.
 
-### 4. Build
+## Step 5 — Specify the timeline
 
-Load the chosen style skills and follow their constraints.
+For each scene include:
+- in/out time
+- selected skill
+- narrative job
+- hero content
+- 2–4 techniques
+- entry handoff
+- exit handoff
+- music/SFX cue if relevant
+- implementation stack
 
-### 5. QA
+## Step 6 — Load style skills
 
-Check:
-- Can the story be understood muted?
-- Does every transition have a visual cause?
-- Is there at least one memorable hero frame?
-- Are typography and UI readable at delivery size?
-- Does the piece avoid generic slideshow behavior?
+Read each selected style's:
+- `SKILL.md`
+- `references/techniques.md`
+- `references/recipes.md`
+
+Only load prompt examples if the implementation brief needs them.
+
+## Step 7 — Protect the quality bar
+
+Reject or revise direction when:
+- every scene uses a different style without narrative reason
+- the first meaningful event occurs too late
+- copy is unreadable at normal playback
+- effects are added only because they look impressive
+- transitions break object continuity unnecessarily
+- data or product behavior is invented
+- camera movement has no target or payoff
+- generative systems cannot render deterministically
 
 ## Output format
 
 ```markdown
-## Motion Direction
+# Motion Direction
 
-### Concept
+## Concept
 [one sentence]
 
-### Style sequence
-1. [STYLE] — [narrative job]
-2. [STYLE] — [narrative job]
+## Viewer takeaway
+[one sentence]
 
-### Timeline
-0–Xs — ...
-X–Ys — ...
+## Story spine
+1. ...
+2. ...
 
-### Transitions
+## Style system
+- Primary: [skill] — [job]
+- Supporting: [skill] — [job]
+
+## Timeline
+### 0:00–0:04 — [scene]
+Skill:
+Narrative job:
+Hero:
+Techniques:
+Entry:
+Exit:
+Audio:
+Implementation:
+
+## Transition logic
 - A → B: ...
 
-### Implementation
-- ...
+## Build order
+1. ...
+2. ...
 
-### QA targets
+## QA gates
 - ...
 ```
+
+## Final principle
+
+The goal is not to make “an AI-generated motion video.”
+
+The goal is to make a piece with enough visual logic, restraint and continuity that the viewer experiences **direction**, not a catalogue of effects.
