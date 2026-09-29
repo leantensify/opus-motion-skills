@@ -1,62 +1,83 @@
+---
+name: data-visualization
+description: Create motion where marks, values and relationships transform while preserving data meaning. Use for analytics, KPI stories, research, finance, operations, product metrics, dashboards, reports or any brief where change, comparison or evidence should be communicated visually.
+license: MIT
+---
+
 # Data Visualization
 
-## Purpose
+## Core idea
 
-Create motion design in the **Data Visualization** visual language. The defining motion engine is **data transitions**.
+The defining motion engine is **data transitions**. Do not reduce this skill to a color palette, font choice, or preset. The motion system itself must make the style recognizable.
 
-## Best used for
+## Use this skill when
 
-Metrics, analytics, reports, research, performance stories.
+Use it when the brief matches the activation cues in the description above, or when the Motion Director explicitly assigns this visual language to a scene.
 
-## Visual grammar
+## Non-negotiable rules
 
-Charts, axes, labels, counters, annotations, outliers, timelines.
+- Preserve object constancy: viewers should recognize which mark became which mark.
+- Do not distort values merely to make a transition prettier.
+- Use annotations to explain the important change.
+- Choose chart forms based on the message, not variety.
+- Motion should clarify ordering, filtering, grouping, trend or causality.
 
-## Motion grammar
+## Workflow
 
-Re-ranking bars, morphing marks, counting values, scrubbers, filtering.
+1. **Extract the message.** Identify the one sentence, metric, object, or transformation the viewer must remember.
+2. **Choose the hero frame.** Design the strongest still composition before animating.
+3. **Choose 2–4 techniques.** Load `references/techniques.md`; do not stack techniques just to show variety.
+4. **Plan continuity.** Decide how the scene enters and exits using `references/recipes.md`.
+5. **Block timing.** Establish hook, build, transformation and hold before adding micro-motion.
+6. **Implement in code.** Prefer deterministic, frame-repeatable animation.
+7. **QA at delivery size.** Check typography, contrast, safe areas, fastest transition and final hold.
 
-## Avoid
+## Timing model
 
-Chartjunk; transitions that break data meaning.
+For a typical 6–12 second scene:
+- 0–15%: immediate visual premise
+- 15–55%: establish the style system
+- 55–80%: strongest transformation
+- 80–100%: readable hero/payoff
+
+## Motion principles
+
+- Use the style's motion engine as the cause of transitions.
+- Prefer object continuity over disappear/reappear editing.
+- Use easing intentionally.
+- Keep one dominant motion idea per beat.
+- Align major state changes to narrative or musical structure.
+- Make the scene understandable with audio muted.
 
 ## Implementation
 
-Preferred approach: SVG/Canvas + D3-style transforms + GSAP.
+Use the simplest stack that can express the motion: HTML/CSS, GSAP or Web Animations, SVG, Canvas, and WebGL/Three.js only when depth, particles or shaders materially improve the result.
 
-## Operating rules
+## Progressive references
 
-1. Start by identifying the message, hero object, and strongest 2–4 second moment.
-2. Make **data transitions** responsible for the motion whenever possible.
-3. Prefer transformation, continuity, and motivated cuts over generic fade-in/fade-out animation.
-4. Keep one dominant idea per shot.
-5. Build a hero frame that works as a still image.
-6. Preserve readability throughout fast motion.
-7. If music exists, align major state changes to musical structure rather than decorating every beat.
-8. Transitions into the next scene should reuse an existing object, line, camera move, texture, or geometry when possible.
+- `references/techniques.md` — signature techniques and implementation notes
+- `references/recipes.md` — shot structures and transition recipes
+- `examples/prompts.md` — reusable brief patterns
 
-## Timing guidance
+## Quality gate
 
-- Hook: 0–2s
-- Establish the system: 2–4s
-- Escalate or transform: 4–8s
-- Hero composition / payoff: final 20–30% of the scene
-- Hold important copy long enough to read at normal playback speed
+- recognizable without the style label
+- hero message readable at delivery resolution
+- no generic fade where a stronger motivated transformation exists
+- clear beginning, escalation and payoff
+- usable exit handoff
+- strong paused hero frame
 
-## Quality check
-
-Preserve data identity across transitions. A viewer should understand what changed and why.
-
-Before export, inspect the opening frame, hero frame, fastest transition, and final frame at full resolution.
-
-## Prompt pattern
+## Prompt starter
 
 ```text
-Use the Data Visualization motion skill.
-Message: [MESSAGE]
+Use the Data Visualization skill.
+Goal: [GOAL]
+Message/content: [CONTENT]
 Duration: [SECONDS]
 Format: [ASPECT RATIO]
 Build the motion in code.
 Let data transitions drive the animation.
-Do not make it feel like a generic AI slideshow.
+Choose only techniques that strengthen the story.
+Avoid generic AI-slideshow transitions.
 ```
