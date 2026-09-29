@@ -1,62 +1,78 @@
+---
+name: pixel-art
+description: Create motion inside a deliberately low-resolution pixel system using integer-positioned sprites, tiles, game UI, coins, score states and frame-based animation. Use for games, retro-tech, playful explainers, nostalgic launches or any concept where interaction and progress can be told through a tiny game world.
+license: MIT
+---
+
 # Pixel Art
 
-## Purpose
+## Core idea
 
-Create motion design in the **Pixel Art** visual language. The defining motion engine is **sprites on a grid**.
+The defining motion engine is **sprites on a grid**. The style must remain recognizable even when labels and decorative effects are removed.
 
-## Best used for
+## Non-negotiable rules
 
-Games, retro-tech, playful explainers, nostalgic launches.
+- Quantize positions, dimensions and scaling to the pixel grid.
+- Use nearest-neighbor scaling; never blur pixel edges.
+- Animate sprites with discrete frames, not vector-like interpolation.
+- Game mechanics should communicate the story, not exist only as decoration.
+- Keep the palette and resolution intentionally constrained.
 
-## Visual grammar
+## Workflow
 
-Low-res canvas; tile maps; sprites; coins; score; pixel UI.
+1. Identify the single message or transformation the scene must communicate.
+2. Design a strong hero frame before animating.
+3. Load `references/techniques.md` and select 2–4 techniques.
+4. Use `references/recipes.md` to plan entry, escalation and exit.
+5. Block timing before adding micro-detail.
+6. Implement deterministically in code.
+7. QA the fastest frame sequence and hero hold at delivery resolution.
 
-## Motion grammar
+## Timing model
 
-Run cycles, jumps, pickups, tile reveals, blinking prompts.
+For 6–12 seconds:
+- 0–15% premise
+- 15–55% establish system
+- 55–80% strongest transformation
+- 80–100% readable payoff
 
-## Avoid
+## Motion principles
 
-Subpixel blur; smooth vector scaling.
+- Let **sprites on a grid** cause the movement.
+- Prefer continuity to disappear/reappear edits.
+- Match easing and frame cadence to the material/system.
+- Keep one dominant idea per beat.
+- Make the scene understandable muted.
+- Transition using an object already present whenever possible.
 
 ## Implementation
 
-Preferred approach: Canvas with integer coordinates; image-rendering: pixelated.
+Use HTML/CSS, GSAP/Web Animations, SVG, Canvas, or WebGL as required. Choose the lightest stack that preserves the style's actual behavior.
 
-## Operating rules
+## Progressive references
 
-1. Start by identifying the message, hero object, and strongest 2–4 second moment.
-2. Make **sprites on a grid** responsible for the motion whenever possible.
-3. Prefer transformation, continuity, and motivated cuts over generic fade-in/fade-out animation.
-4. Keep one dominant idea per shot.
-5. Build a hero frame that works as a still image.
-6. Preserve readability throughout fast motion.
-7. If music exists, align major state changes to musical structure rather than decorating every beat.
-8. Transitions into the next scene should reuse an existing object, line, camera move, texture, or geometry when possible.
+- `references/techniques.md`
+- `references/recipes.md`
+- `examples/prompts.md`
 
-## Timing guidance
+## Quality gate
 
-- Hook: 0–2s
-- Establish the system: 2–4s
-- Escalate or transform: 4–8s
-- Hero composition / payoff: final 20–30% of the scene
-- Hold important copy long enough to read at normal playback speed
+- recognizable without style label
+- readable hero message
+- no unmotivated generic fades
+- clear escalation and payoff
+- coherent exit handoff
+- paused frames still look intentionally composed
 
-## Quality check
-
-Quantize position and scale. The grid is a constraint, not just an aesthetic.
-
-Before export, inspect the opening frame, hero frame, fastest transition, and final frame at full resolution.
-
-## Prompt pattern
+## Prompt starter
 
 ```text
-Use the Pixel Art motion skill.
-Message: [MESSAGE]
+Use the Pixel Art skill.
+Goal: [GOAL]
+Content: [CONTENT]
 Duration: [SECONDS]
 Format: [ASPECT RATIO]
-Build the motion in code.
-Let sprites on a grid drive the animation.
-Do not make it feel like a generic AI slideshow.
+Let sprites on a grid drive the motion.
+Build it in code.
+Use only techniques that strengthen the story.
 ```
