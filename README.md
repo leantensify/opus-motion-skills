@@ -124,7 +124,19 @@ Clone the repository:
 git clone https://github.com/leantensify/opus-motion-skills.git
 ```
 
-Then copy the skill folders you want into the skills directory used by your agent, or reference the relevant `SKILL.md` from your project.
+Then install them for Claude Code:
+
+```bash
+bash scripts/install.sh --project
+```
+
+or globally:
+
+```bash
+bash scripts/install.sh --global
+```
+
+See [INSTALLATION.md](INSTALLATION.md) for selected-skill installs and overwrite behavior.
 
 You can invoke a style directly:
 
@@ -147,6 +159,8 @@ Create a 30-second product film from this brief.
 Choose the minimum number of motion languages needed.
 Create the story spine and timeline before implementation.
 ```
+
+A machine-readable registry is also available at [skills/catalog.json](skills/catalog.json).
 
 ## Recommended implementation stack
 
