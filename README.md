@@ -1,107 +1,248 @@
 # Opus Motion Skills
 
-**16 reusable motion-design skills for Claude / Opus — 15 visual styles + 1 Motion Director.**
+**Motion-design intelligence for AI coding agents.**
 
-Turn a coding agent into a motion designer with explicit visual grammar, motion rules, timing, implementation guidance, and quality checks.
+15 professional motion languages + one Motion Director, packaged as reusable Agent Skills.
 
-## Included styles
+> One idea can look completely different when the **motion engine** changes.
+
+## Showcase
+
+### 15 motion styles. One fixed idea.
+
+The phrase, circle, play control and style index stay constant. Only the visual language and motion system change.
+
+**Full showreel:** 2:30 · 16:9 · 15 styles
+
+<!-- SHOWCASE_VIDEO: paste the GitHub user-attachments video URL on its own line below this comment -->
+
+See the full showcase breakdown in [showcase/README.md](showcase/README.md).
 
 | # | Skill | Motion engine |
 |---|---|---|
-| 01 | Kinetic Typography | Letters |
-| 02 | Swiss / International | Grid |
-| 03 | Brutalist Web | Cursor + hard cuts |
-| 04 | Blueprint | Construction |
-| 05 | Terminal | Output streaming |
-| 06 | Data Visualization | Data transitions |
-| 07 | Isometric | Modular assembly |
-| 08 | Liquid Morph | Fluid merging |
-| 09 | Paper Cut / Collage | Physical layers |
-| 10 | Pixel Art | Sprites on a grid |
-| 11 | Hand-Drawn Sketch | Strokes |
-| 12 | Retro Futurism | Scanlines + signal |
-| 13 | Cinematic 3D Type | Camera + depth |
-| 14 | HUD / Sci-Fi | Tracking + micro-data |
-| 15 | Generative Motion | Procedural systems |
-| 16 | Motion Director | Style selection + sequencing |
+| 01 | [Kinetic Typography](skills/kinetic-typography/) | letters |
+| 02 | [Swiss / International](skills/swiss-international/) | the grid |
+| 03 | [Brutalist Web](skills/brutalist-web/) | cursor + hard cuts |
+| 04 | [Blueprint](skills/blueprint/) | construction |
+| 05 | [Terminal](skills/terminal/) | output streaming |
+| 06 | [Data Visualization](skills/data-visualization/) | data transitions |
+| 07 | [Isometric](skills/isometric/) | modular assembly |
+| 08 | [Liquid Morph](skills/liquid-morph/) | fluid merging |
+| 09 | [Paper Cut / Collage](skills/paper-cut-collage/) | physical layers |
+| 10 | [Pixel Art](skills/pixel-art/) | sprites on a grid |
+| 11 | [Hand-Drawn Sketch](skills/hand-drawn-sketch/) | strokes |
+| 12 | [Retro Futurism](skills/retro-futurism/) | scanlines + signal |
+| 13 | [Cinematic 3D Type](skills/cinematic-3d-type/) | camera + depth |
+| 14 | [HUD / Sci-Fi](skills/hud-sci-fi/) | tracking + micro-data |
+| 15 | [Generative Motion](skills/generative-motion/) | procedural systems |
+| — | [Motion Director](skills/motion-director/) | story + style orchestration |
 
-## How to use
+## Why this exists
 
-Copy one skill folder into your agent's skills directory, or give the relevant `SKILL.md` to Claude Code / Opus as project guidance.
+Most AI motion prompts describe **appearance**:
 
-Example request:
+> “Make it futuristic. Use bold typography. Add some particles.”
+
+That is not a motion system.
+
+This repository describes what actually **drives the animation**.
+
+A Swiss scene moves because the grid changes.  
+A Terminal scene moves because output streams.  
+A Liquid scene moves because mass splits and merges.  
+A 3D scene moves because the camera and depth change.  
+A Generative scene moves because a procedural system reorganizes itself.
+
+That difference is the core idea.
+
+## What is inside each professional skill
+
+Each style now uses progressive disclosure:
 
 ```text
-Create a 30-second product launch video.
-Use the motion-director skill to choose the strongest visual languages,
-then follow the selected style skills exactly.
-Avoid generic slideshow transitions.
+skills/kinetic-typography/
+├── SKILL.md
+├── references/
+│   ├── techniques.md
+│   └── recipes.md
+└── examples/
+    └── prompts.md
+```
+
+The `SKILL.md` contains:
+- Agent Skills frontmatter
+- activation guidance
+- non-negotiable design rules
+- workflow
+- timing model
+- implementation guidance
+- quality gate
+
+The deeper references contain:
+- **12 signature techniques**
+- shot structures
+- transition recipes
+- implementation patterns
+- reusable prompts
+
+This keeps the core skill compact while letting an agent load detail only when it is useful.
+
+## Motion Director
+
+The [Motion Director](skills/motion-director/) sits above the 15 styles.
+
+Give it a brief:
+
+```text
+Create a 30-second launch video for my SaaS.
+Audience: operations leaders.
+Show one metric and one UI moment.
+Modern and premium, but not cyberpunk.
+```
+
+It should first build a story spine, then select the smallest useful combination of skills.
+
+Example direction:
+
+```text
+0–04s   Kinetic Typography — hook
+04–13s  Isometric          — explain the system
+13–20s  Data Visualization — prove the result
+20–27s  Cinematic 3D       — hero moment
+27–30s  Swiss              — clean CTA
+```
+
+The point is **not** to use more styles.
+
+The point is to give each style a narrative job.
+
+## Use with an Agent Skills-compatible coding agent
+
+Clone the repository:
+
+```bash
+git clone https://github.com/leantensify/opus-motion-skills.git
+```
+
+Then copy the skill folders you want into the skills directory used by your agent, or reference the relevant `SKILL.md` from your project.
+
+You can invoke a style directly:
+
+```text
+Use the kinetic-typography skill.
+
+Create an 8-second launch hook for:
+"BUILD LESS. SHIP MORE."
+
+Let typography drive every transition.
 Build the motion in code.
 ```
 
-You can also call a style directly:
+Or start with Motion Director:
 
 ```text
-Create a 12-second launch sequence using the kinetic-typography skill.
-The phrase is "SHIP FASTER".
-Make the letters drive the animation.
+Use the motion-director skill.
+
+Create a 30-second product film from this brief.
+Choose the minimum number of motion languages needed.
+Create the story spine and timeline before implementation.
 ```
 
-## Core philosophy
+## Recommended implementation stack
 
-A motion style is not a color palette or a preset. Each style needs a **motion engine**: the visual system that actually causes things to move.
+The skills are intentionally not tied to one framework.
 
-The same content should feel fundamentally different when rendered through different motion engines.
-
-## Recommended stack
-
+Useful building blocks include:
 - HTML / CSS / JavaScript
-- GSAP
+- GSAP or Web Animations
 - SVG
 - Canvas
-- WebGL / Three.js where depth genuinely matters
-- Frame-exact procedural animation where possible
+- WebGL / Three.js when depth or shaders are genuinely needed
 
-## Repository structure
-
-```
-skills/
-  motion-director/
-  kinetic-typography/
-  swiss-international/
-  brutalist-web/
-  blueprint/
-  terminal/
-  data-visualization/
-  isometric/
-  liquid-morph/
-  paper-cut-collage/
-  pixel-art/
-  hand-drawn-sketch/
-  retro-futurism/
-  cinematic-3d-type/
-  hud-sci-fi/
-  generative-motion/
-```
+The design logic should survive a change of tooling.
 
 ## Quality bar
 
-Every generated piece should have:
-- a clear visual hierarchy
-- intentional timing
-- transitions motivated by form
-- no arbitrary fades when a stronger transformation exists
-- a hero frame worth pausing on
-- readable typography at delivery resolution
-- motion that still communicates with audio muted
+A finished piece should:
+- communicate with audio muted
+- contain at least one strong hero frame
+- use transitions motivated by form or narrative
+- keep important copy readable
+- avoid generic fade/slide slideshow behavior
+- preserve object continuity where possible
+- render deterministically when procedural systems are involved
 
-## Origin
+Read [Motion Principles](docs/MOTION_PRINCIPLES.md).
 
-The system began as a single experiment: **one idea, redrawn 15 times**. The phrase, circle, play control, and style index stayed constant while only the visual language and motion engine changed.
+## Validation
+
+Every skill is automatically checked for:
+- required `SKILL.md`
+- valid kebab-case `name`
+- matching folder/name
+- non-empty `description`
+- compact core manifest
+- required references/examples
+- exactly 15 styles + Motion Director
+
+Run locally:
+
+```bash
+python scripts/validate_skills.py
+```
+
+CI runs the same validator on pushes and pull requests.
+
+## From open-source library to product
+
+This repository can become the intelligence layer of a full motion product:
+
+```text
+brief
+  ↓
+Motion Director
+  ↓
+selected motion skills
+  ↓
+storyboard + timeline
+  ↓
+coded scenes
+  ↓
+preview
+  ↓
+render / export
+```
+
+The working product direction is documented in [Product Vision](docs/PRODUCT_VISION.md).
+
+The long-term opportunity is not another template library.
+
+It is a system that can turn creative direction into **coded motion design**.
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md).
+
+Current milestone: **v0.2 — Professional Skill System**
+
+- [x] 15 motion languages
+- [x] Motion Director
+- [x] Agent Skills metadata
+- [x] technique libraries
+- [x] transition recipes
+- [x] examples
+- [x] validation + CI
+- [ ] inline showcase video
+
+## Contributing
+
+New skills should define a real motion engine, not only an aesthetic.
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-MIT. Use, remix, improve, and contribute.
+MIT.
 
 ---
 
