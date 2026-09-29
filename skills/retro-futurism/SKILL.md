@@ -1,62 +1,78 @@
+---
+name: retro-futurism
+description: Create motion inspired by 1970s–1990s visions of the future using CRT behavior, scanlines, tape counters, striped suns, chrome or italic type, signal glitches and analog interface cues. Use for technology history, music, speculative launches, nostalgia, synth aesthetics or moments where the medium's signal should drive the edit.
+license: MIT
+---
+
 # Retro Futurism
 
-## Purpose
+## Core idea
 
-Create motion design in the **Retro Futurism** visual language. The defining motion engine is **scanlines + signal**.
+The defining motion engine is **scanlines + signal**. The style must remain recognizable even when labels and decorative effects are removed.
 
-## Best used for
+## Non-negotiable rules
 
-Music, technology history, speculative launches, nostalgia.
+- Treat signal behavior as motion logic, not a generic glitch overlay.
+- Establish one era-inspired visual system instead of mixing every retro trope.
+- Use tracking errors, RGB split and noise sparingly and at motivated moments.
+- Typography should feel period-aware but remain readable.
+- Power-on, scan and tape behavior can provide scene structure.
 
-## Visual grammar
+## Workflow
 
-CRT glow; chrome/italic type; striped suns; tape counters; VHS artifacts.
+1. Identify the single message or transformation the scene must communicate.
+2. Design a strong hero frame before animating.
+3. Load `references/techniques.md` and select 2–4 techniques.
+4. Use `references/recipes.md` to plan entry, escalation and exit.
+5. Block timing before adding micro-detail.
+6. Implement deterministically in code.
+7. QA the fastest frame sequence and hero hold at delivery resolution.
 
-## Motion grammar
+## Timing model
 
-Power-on, scan, tracking glitches, RGB split, tape movement.
+For 6–12 seconds:
+- 0–15% premise
+- 15–55% establish system
+- 55–80% strongest transformation
+- 80–100% readable payoff
 
-## Avoid
+## Motion principles
 
-Modern glassmorphism; generic neon cyberpunk.
+- Let **scanlines + signal** cause the movement.
+- Prefer continuity to disappear/reappear edits.
+- Match easing and frame cadence to the material/system.
+- Keep one dominant idea per beat.
+- Make the scene understandable muted.
+- Transition using an object already present whenever possible.
 
 ## Implementation
 
-Preferred approach: CSS/SVG/Canvas shaders + GSAP.
+Use HTML/CSS, GSAP/Web Animations, SVG, Canvas, or WebGL as required. Choose the lightest stack that preserves the style's actual behavior.
 
-## Operating rules
+## Progressive references
 
-1. Start by identifying the message, hero object, and strongest 2–4 second moment.
-2. Make **scanlines + signal** responsible for the motion whenever possible.
-3. Prefer transformation, continuity, and motivated cuts over generic fade-in/fade-out animation.
-4. Keep one dominant idea per shot.
-5. Build a hero frame that works as a still image.
-6. Preserve readability throughout fast motion.
-7. If music exists, align major state changes to musical structure rather than decorating every beat.
-8. Transitions into the next scene should reuse an existing object, line, camera move, texture, or geometry when possible.
+- `references/techniques.md`
+- `references/recipes.md`
+- `examples/prompts.md`
 
-## Timing guidance
+## Quality gate
 
-- Hook: 0–2s
-- Establish the system: 2–4s
-- Escalate or transform: 4–8s
-- Hero composition / payoff: final 20–30% of the scene
-- Hold important copy long enough to read at normal playback speed
+- recognizable without style label
+- readable hero message
+- no unmotivated generic fades
+- clear escalation and payoff
+- coherent exit handoff
+- paused frames still look intentionally composed
 
-## Quality check
-
-Signal behavior should motivate transitions. Use glitches sparingly and structurally.
-
-Before export, inspect the opening frame, hero frame, fastest transition, and final frame at full resolution.
-
-## Prompt pattern
+## Prompt starter
 
 ```text
-Use the Retro Futurism motion skill.
-Message: [MESSAGE]
+Use the Retro Futurism skill.
+Goal: [GOAL]
+Content: [CONTENT]
 Duration: [SECONDS]
 Format: [ASPECT RATIO]
-Build the motion in code.
-Let scanlines + signal drive the animation.
-Do not make it feel like a generic AI slideshow.
+Let scanlines + signal drive the motion.
+Build it in code.
+Use only techniques that strengthen the story.
 ```
