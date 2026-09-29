@@ -1,62 +1,78 @@
+---
+name: generative-motion
+description: Create deterministic procedural motion using particles, flow fields, attractors, sampled targets, emergent patterns and rule-based transformation. Use for AI or compute themes, identity systems, abstract finales, data-driven art, large-scale transitions or scenes where many simple elements should self-organize into meaningful forms.
+license: MIT
+---
+
 # Generative Motion
 
-## Purpose
+## Core idea
 
-Create motion design in the **Generative Motion** visual language. The defining motion engine is **procedural systems**.
+The defining motion engine is **procedural systems**. Build the scene so this system—not a surface effect—creates the visual identity.
 
-## Best used for
+## Non-negotiable rules
 
-Finales, identity systems, AI/compute themes, abstract transformation.
+- Procedural does not mean random: renders must be deterministic.
+- Define clear system states and transitions between them.
+- Particles or agents should encode structure, not merely fill space.
+- Use seeded randomness and time-based pure functions whenever possible.
+- The final target form must become readable before the system disperses again.
 
-## Visual grammar
+## Workflow
 
-Particles; flow fields; sampled text targets; trails; attractors; emergent forms.
+1. Extract the single hero message, object or transformation.
+2. Design the hero frame before animating.
+3. Load `references/techniques.md` and choose 2–4 techniques.
+4. Load `references/recipes.md` for sequence and handoff patterns.
+5. Block macro timing before micro-detail.
+6. Implement deterministic frame behavior.
+7. QA opening, hero, fastest transition and exit at delivery resolution.
 
-## Motion grammar
+## Timing model
 
-Self-assembly, dispersion, advection, attraction, collapse.
+For a 6–12 second scene:
+- 0–15% visual premise
+- 15–55% establish system
+- 55–80% strongest transformation
+- 80–100% readable payoff
 
-## Avoid
+## Motion principles
 
-Pure randomness; non-deterministic renders.
+- Let **procedural systems** cause the movement.
+- Prefer continuity to disappear/reappear edits.
+- Match easing and temporal behavior to the physical/system logic.
+- Keep one dominant motion idea per beat.
+- Align major events to narrative or musical structure.
+- Make the scene understandable muted.
 
 ## Implementation
 
-Preferred approach: Canvas/WebGL with seeded randomness.
+Use HTML/CSS, GSAP/Web Animations, SVG, Canvas, WebGL or Three.js as required. Choose the lightest stack that expresses the real behavior.
 
-## Operating rules
+## Progressive references
 
-1. Start by identifying the message, hero object, and strongest 2–4 second moment.
-2. Make **procedural systems** responsible for the motion whenever possible.
-3. Prefer transformation, continuity, and motivated cuts over generic fade-in/fade-out animation.
-4. Keep one dominant idea per shot.
-5. Build a hero frame that works as a still image.
-6. Preserve readability throughout fast motion.
-7. If music exists, align major state changes to musical structure rather than decorating every beat.
-8. Transitions into the next scene should reuse an existing object, line, camera move, texture, or geometry when possible.
+- `references/techniques.md`
+- `references/recipes.md`
+- `examples/prompts.md`
 
-## Timing guidance
+## Quality gate
 
-- Hook: 0–2s
-- Establish the system: 2–4s
-- Escalate or transform: 4–8s
-- Hero composition / payoff: final 20–30% of the scene
-- Hold important copy long enough to read at normal playback speed
+- recognizable without the style label
+- readable hero state
+- no generic fade where a motivated transition exists
+- clear escalation and payoff
+- deterministic/repeatable behavior
+- coherent exit for the next scene
 
-## Quality check
-
-Procedural motion must be deterministic for rendering. Systems should transition between meaningful target states.
-
-Before export, inspect the opening frame, hero frame, fastest transition, and final frame at full resolution.
-
-## Prompt pattern
+## Prompt starter
 
 ```text
-Use the Generative Motion motion skill.
-Message: [MESSAGE]
+Use the Generative Motion skill.
+Goal: [GOAL]
+Content: [CONTENT]
 Duration: [SECONDS]
 Format: [ASPECT RATIO]
-Build the motion in code.
-Let procedural systems drive the animation.
-Do not make it feel like a generic AI slideshow.
+Let procedural systems drive the motion.
+Build in code.
+Use only techniques that strengthen the story.
 ```
