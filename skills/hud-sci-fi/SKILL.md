@@ -1,62 +1,78 @@
+---
+name: hud-sci-fi
+description: Create functional-looking interface motion using reticles, object tracking, scan sweeps, radar, brackets, identifiers and compact readouts. Use for AI, robotics, aerospace, diagnostics, security, computer vision, advanced interfaces or scenes where the system should appear to measure, classify or track something.
+license: MIT
+---
+
 # HUD / Sci-Fi
 
-## Purpose
+## Core idea
 
-Create motion design in the **HUD / Sci-Fi** visual language. The defining motion engine is **tracking + micro-data**.
+The defining motion engine is **tracking + micro-data**. Build the scene so this system—not a surface effect—creates the visual identity.
 
-## Best used for
+## Non-negotiable rules
 
-AI, aerospace, security, robotics, diagnostics.
+- Every readout should appear to measure, identify or control something specific.
+- Do not fill empty space with meaningless telemetry.
+- Keep micro-data subordinate to the hero object.
+- Use scanning and lock-on as causal events.
+- Maintain consistent coordinate, label and status conventions.
 
-## Visual grammar
+## Workflow
 
-Reticles; object IDs; radar; brackets; readouts; scan grids; micro labels.
+1. Extract the single hero message, object or transformation.
+2. Design the hero frame before animating.
+3. Load `references/techniques.md` and choose 2–4 techniques.
+4. Load `references/recipes.md` for sequence and handoff patterns.
+5. Block macro timing before micro-detail.
+6. Implement deterministic frame behavior.
+7. QA opening, hero, fastest transition and exit at delivery resolution.
 
-## Motion grammar
+## Timing model
 
-Lock-on, target tracking, sweeps, toggles, arc rotations.
+For a 6–12 second scene:
+- 0–15% visual premise
+- 15–55% establish system
+- 55–80% strongest transformation
+- 80–100% readable payoff
 
-## Avoid
+## Motion principles
 
-Unreadable decorative telemetry; random sci-fi noise.
+- Let **tracking + micro-data** cause the movement.
+- Prefer continuity to disappear/reappear edits.
+- Match easing and temporal behavior to the physical/system logic.
+- Keep one dominant motion idea per beat.
+- Align major events to narrative or musical structure.
+- Make the scene understandable muted.
 
 ## Implementation
 
-Preferred approach: SVG/Canvas + GSAP.
+Use HTML/CSS, GSAP/Web Animations, SVG, Canvas, WebGL or Three.js as required. Choose the lightest stack that expresses the real behavior.
 
-## Operating rules
+## Progressive references
 
-1. Start by identifying the message, hero object, and strongest 2–4 second moment.
-2. Make **tracking + micro-data** responsible for the motion whenever possible.
-3. Prefer transformation, continuity, and motivated cuts over generic fade-in/fade-out animation.
-4. Keep one dominant idea per shot.
-5. Build a hero frame that works as a still image.
-6. Preserve readability throughout fast motion.
-7. If music exists, align major state changes to musical structure rather than decorating every beat.
-8. Transitions into the next scene should reuse an existing object, line, camera move, texture, or geometry when possible.
+- `references/techniques.md`
+- `references/recipes.md`
+- `examples/prompts.md`
 
-## Timing guidance
+## Quality gate
 
-- Hook: 0–2s
-- Establish the system: 2–4s
-- Escalate or transform: 4–8s
-- Hero composition / payoff: final 20–30% of the scene
-- Hold important copy long enough to read at normal playback speed
+- recognizable without the style label
+- readable hero state
+- no generic fade where a motivated transition exists
+- clear escalation and payoff
+- deterministic/repeatable behavior
+- coherent exit for the next scene
 
-## Quality check
-
-Every readout should appear to measure or track something specific. Function creates the aesthetic.
-
-Before export, inspect the opening frame, hero frame, fastest transition, and final frame at full resolution.
-
-## Prompt pattern
+## Prompt starter
 
 ```text
-Use the HUD / Sci-Fi motion skill.
-Message: [MESSAGE]
+Use the HUD / Sci-Fi skill.
+Goal: [GOAL]
+Content: [CONTENT]
 Duration: [SECONDS]
 Format: [ASPECT RATIO]
-Build the motion in code.
-Let tracking + micro-data drive the animation.
-Do not make it feel like a generic AI slideshow.
+Let tracking + micro-data drive the motion.
+Build in code.
+Use only techniques that strengthen the story.
 ```
