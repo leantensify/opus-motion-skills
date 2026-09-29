@@ -1,62 +1,78 @@
+---
+name: cinematic-3d-type
+description: Create premium spatial motion where extruded typography, depth, camera choreography, atmosphere and lighting carry the scene. Use for hero launches, title sequences, premium brand films, dramatic product moments, event openers or any brief where scale and camera movement should create the payoff.
+license: MIT
+---
+
 # Cinematic 3D Type
 
-## Purpose
+## Core idea
 
-Create motion design in the **Cinematic 3D Type** visual language. The defining motion engine is **camera + depth**.
+The defining motion engine is **camera + depth**. Build the scene so this system—not a surface effect—creates the visual identity.
 
-## Best used for
+## Non-negotiable rules
 
-Hero launches, premium title reveals, dramatic finales.
+- Camera movement must have narrative purpose.
+- Establish scale before the biggest move.
+- Use depth to clarify hierarchy, not to decorate every element.
+- Lighting changes should reveal form, not hide weak geometry.
+- Reserve the most dramatic fly-through or orbit for a meaningful beat.
 
-## Visual grammar
+## Workflow
 
-Extruded typography; fog; dust; directional light; deep perspective.
+1. Extract the single hero message, object or transformation.
+2. Design the hero frame before animating.
+3. Load `references/techniques.md` and choose 2–4 techniques.
+4. Load `references/recipes.md` for sequence and handoff patterns.
+5. Block macro timing before micro-detail.
+6. Implement deterministic frame behavior.
+7. QA opening, hero, fastest transition and exit at delivery resolution.
 
-## Motion grammar
+## Timing model
 
-Camera orbit, dolly, fly-through, depth reveals, light sweeps.
+For a 6–12 second scene:
+- 0–15% visual premise
+- 15–55% establish system
+- 55–80% strongest transformation
+- 80–100% readable payoff
 
-## Avoid
+## Motion principles
 
-Constant camera motion; cheap bevel overload.
+- Let **camera + depth** cause the movement.
+- Prefer continuity to disappear/reappear edits.
+- Match easing and temporal behavior to the physical/system logic.
+- Keep one dominant motion idea per beat.
+- Align major events to narrative or musical structure.
+- Make the scene understandable muted.
 
 ## Implementation
 
-Preferred approach: Three.js/WebGL or disciplined CSS 3D.
+Use HTML/CSS, GSAP/Web Animations, SVG, Canvas, WebGL or Three.js as required. Choose the lightest stack that expresses the real behavior.
 
-## Operating rules
+## Progressive references
 
-1. Start by identifying the message, hero object, and strongest 2–4 second moment.
-2. Make **camera + depth** responsible for the motion whenever possible.
-3. Prefer transformation, continuity, and motivated cuts over generic fade-in/fade-out animation.
-4. Keep one dominant idea per shot.
-5. Build a hero frame that works as a still image.
-6. Preserve readability throughout fast motion.
-7. If music exists, align major state changes to musical structure rather than decorating every beat.
-8. Transitions into the next scene should reuse an existing object, line, camera move, texture, or geometry when possible.
+- `references/techniques.md`
+- `references/recipes.md`
+- `examples/prompts.md`
 
-## Timing guidance
+## Quality gate
 
-- Hook: 0–2s
-- Establish the system: 2–4s
-- Escalate or transform: 4–8s
-- Hero composition / payoff: final 20–30% of the scene
-- Hold important copy long enough to read at normal playback speed
+- recognizable without the style label
+- readable hero state
+- no generic fade where a motivated transition exists
+- clear escalation and payoff
+- deterministic/repeatable behavior
+- coherent exit for the next scene
 
-## Quality check
-
-Camera movement is the edit. Establish scale, then earn the hero move through space.
-
-Before export, inspect the opening frame, hero frame, fastest transition, and final frame at full resolution.
-
-## Prompt pattern
+## Prompt starter
 
 ```text
-Use the Cinematic 3D Type motion skill.
-Message: [MESSAGE]
+Use the Cinematic 3D Type skill.
+Goal: [GOAL]
+Content: [CONTENT]
 Duration: [SECONDS]
 Format: [ASPECT RATIO]
-Build the motion in code.
-Let camera + depth drive the animation.
-Do not make it feel like a generic AI slideshow.
+Let camera + depth drive the motion.
+Build in code.
+Use only techniques that strengthen the story.
 ```
