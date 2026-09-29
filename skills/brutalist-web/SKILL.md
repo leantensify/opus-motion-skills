@@ -1,62 +1,97 @@
+---
+name: brutalist-web
+description: Create raw browser-native motion using default-web aesthetics, cursor interaction, hard state changes, borders, links, alerts and intentionally unpolished UI. Use for developer tools, internet culture, anti-polish campaigns, experimental launches, or scenes that should feel like the browser itself is performing the edit.
+license: MIT
+---
+
 # Brutalist Web
 
-## Purpose
+## Core idea
 
-Create motion design in the **Brutalist Web** visual language. The defining motion engine is **cursor + hard cuts**.
+The defining motion engine is **cursor + hard cuts**. Do not reduce this skill to a color palette, font choice, or preset. The motion system itself must make the style recognizable.
 
-## Best used for
+## Use this skill when
 
-Internet-native pieces, dev tools, anti-polish campaigns, playful launches.
+Use it when the brief matches the activation cues in the description above, or when the Motion Director explicitly assigns this visual language to a scene.
 
-## Visual grammar
+## Non-negotiable rules
 
-Default HTML feel; Times/Arial; blue links; thick borders; raw buttons; alert boxes.
+- Use browser behavior as choreography.
+- Hard cuts and state changes are valid motion; do not smooth everything.
+- Keep the interface intentionally raw but still readable.
+- Prefer semantic HTML-looking components over decorative cyberpunk UI.
+- Use cursor actions only when they cause a visible state change.
 
-## Motion grammar
+## Workflow
 
-Cursor clicks, instant state changes, hard cuts, marquee movement, jitter.
+1. **Extract the message.** Identify the one sentence, metric, object, or transformation the viewer must remember.
+2. **Choose the hero frame.** Design the strongest still composition before animating.
+3. **Choose 2–4 techniques.** Load `references/techniques.md`; do not stack techniques just to show variety.
+4. **Plan continuity.** Decide how the scene enters and exits using `references/recipes.md`.
+5. **Block timing.** Establish hook, build, transformation and hold before adding micro-motion.
+6. **Implement in code.** Prefer deterministic, frame-repeatable animation.
+7. **QA at delivery size.** Check typography, contrast, safe areas, fastest transition and final hold.
 
-## Avoid
+## Timing model
 
-Smooth luxury easing; glossy gradients; fake 3D polish.
+A useful default for a 6–12 second scene:
+
+- 0–15%: immediate visual premise
+- 15–55%: establish the style system
+- 55–80%: strongest transformation
+- 80–100%: readable hero/payoff
+
+Break this model when the narrative requires it, but never spend the first third on setup that communicates nothing.
+
+## Motion principles
+
+- Use the style's motion engine as the cause of transitions.
+- Prefer object continuity over disappear/reappear editing.
+- Use easing intentionally. Mechanical systems should not feel rubbery; organic systems should not feel like linear UI tweens.
+- Keep one dominant motion idea per beat.
+- Major state changes should align to narrative or musical structure, not every available beat.
+- A viewer should understand the scene with audio muted.
 
 ## Implementation
 
-Preferred approach: HTML/CSS/JS + GSAP steps easing.
+Choose the simplest stack that can express the motion:
+- HTML/CSS for layout and typography
+- GSAP or Web Animations for timelines
+- SVG for paths, masks, vector morphs and line work
+- Canvas for many repeated/dynamic elements
+- WebGL/Three.js only when depth, particles or shaders materially improve the result
 
-## Operating rules
+Avoid adding a heavy 3D stack to solve a 2D composition problem.
 
-1. Start by identifying the message, hero object, and strongest 2–4 second moment.
-2. Make **cursor + hard cuts** responsible for the motion whenever possible.
-3. Prefer transformation, continuity, and motivated cuts over generic fade-in/fade-out animation.
-4. Keep one dominant idea per shot.
-5. Build a hero frame that works as a still image.
-6. Preserve readability throughout fast motion.
-7. If music exists, align major state changes to musical structure rather than decorating every beat.
-8. Transitions into the next scene should reuse an existing object, line, camera move, texture, or geometry when possible.
+## Progressive references
 
-## Timing guidance
+Load these only when needed:
 
-- Hook: 0–2s
-- Establish the system: 2–4s
-- Escalate or transform: 4–8s
-- Hero composition / payoff: final 20–30% of the scene
-- Hold important copy long enough to read at normal playback speed
+- `references/techniques.md` — signature techniques and implementation notes
+- `references/recipes.md` — shot structures, transitions and sequence recipes
+- `examples/prompts.md` — reusable brief patterns
 
-## Quality check
+## Quality gate
 
-Preserve rawness. Interactions should feel like the browser itself is performing the edit.
+Before considering the scene complete:
 
-Before export, inspect the opening frame, hero frame, fastest transition, and final frame at full resolution.
+- the style remains recognizable with the style label removed
+- the hero message is readable at delivery resolution
+- no transition is a generic fade when a stronger motivated transformation exists
+- animation has a clear beginning, escalation and payoff
+- the exit offers a usable handoff to the next scene
+- the frame still looks designed when paused
 
-## Prompt pattern
+## Prompt starter
 
 ```text
-Use the Brutalist Web motion skill.
-Message: [MESSAGE]
+Use the Brutalist Web skill.
+Goal: [GOAL]
+Message/content: [CONTENT]
 Duration: [SECONDS]
 Format: [ASPECT RATIO]
 Build the motion in code.
 Let cursor + hard cuts drive the animation.
-Do not make it feel like a generic AI slideshow.
+Choose only the techniques that strengthen the story.
+Avoid generic AI-slideshow transitions.
 ```
