@@ -1,0 +1,183 @@
+{
+  "schema_version": "1.0",
+  "name": "opus-motion-skills",
+  "description": "Motion-design intelligence for AI coding agents.",
+  "skills": [
+    {
+      "id": "motion-director",
+      "title": "Motion Director",
+      "engine": "story + style orchestration",
+      "tags": [
+        "motion-video",
+        "creative-direction",
+        "storyboard"
+      ],
+      "path": "skills/motion-director/SKILL.md"
+    },
+    {
+      "id": "kinetic-typography",
+      "title": "Kinetic Typography",
+      "engine": "letters",
+      "tags": [
+        "typography",
+        "hooks",
+        "titles"
+      ],
+      "path": "skills/kinetic-typography/SKILL.md"
+    },
+    {
+      "id": "swiss-international",
+      "title": "Swiss / International",
+      "engine": "the grid",
+      "tags": [
+        "editorial",
+        "grid",
+        "precision"
+      ],
+      "path": "skills/swiss-international/SKILL.md"
+    },
+    {
+      "id": "brutalist-web",
+      "title": "Brutalist Web",
+      "engine": "cursor + hard cuts",
+      "tags": [
+        "web",
+        "developer",
+        "raw-ui"
+      ],
+      "path": "skills/brutalist-web/SKILL.md"
+    },
+    {
+      "id": "blueprint",
+      "title": "Blueprint",
+      "engine": "construction",
+      "tags": [
+        "engineering",
+        "technical",
+        "industrial"
+      ],
+      "path": "skills/blueprint/SKILL.md"
+    },
+    {
+      "id": "terminal",
+      "title": "Terminal",
+      "engine": "output streaming",
+      "tags": [
+        "developer",
+        "cli",
+        "ai-coding"
+      ],
+      "path": "skills/terminal/SKILL.md"
+    },
+    {
+      "id": "data-visualization",
+      "title": "Data Visualization",
+      "engine": "data transitions",
+      "tags": [
+        "data",
+        "metrics",
+        "analytics"
+      ],
+      "path": "skills/data-visualization/SKILL.md"
+    },
+    {
+      "id": "isometric",
+      "title": "Isometric",
+      "engine": "modular assembly",
+      "tags": [
+        "systems",
+        "workflow",
+        "logistics"
+      ],
+      "path": "skills/isometric/SKILL.md"
+    },
+    {
+      "id": "liquid-morph",
+      "title": "Liquid Morph",
+      "engine": "fluid merging",
+      "tags": [
+        "organic",
+        "identity",
+        "morph"
+      ],
+      "path": "skills/liquid-morph/SKILL.md"
+    },
+    {
+      "id": "paper-cut-collage",
+      "title": "Paper Cut / Collage",
+      "engine": "physical layers",
+      "tags": [
+        "editorial",
+        "fashion",
+        "tactile"
+      ],
+      "path": "skills/paper-cut-collage/SKILL.md"
+    },
+    {
+      "id": "pixel-art",
+      "title": "Pixel Art",
+      "engine": "sprites on a grid",
+      "tags": [
+        "games",
+        "retro",
+        "playful"
+      ],
+      "path": "skills/pixel-art/SKILL.md"
+    },
+    {
+      "id": "hand-drawn-sketch",
+      "title": "Hand-Drawn Sketch",
+      "engine": "strokes",
+      "tags": [
+        "sketch",
+        "education",
+        "ideation"
+      ],
+      "path": "skills/hand-drawn-sketch/SKILL.md"
+    },
+    {
+      "id": "retro-futurism",
+      "title": "Retro Futurism",
+      "engine": "scanlines + signal",
+      "tags": [
+        "retro",
+        "technology-history",
+        "music"
+      ],
+      "path": "skills/retro-futurism/SKILL.md"
+    },
+    {
+      "id": "cinematic-3d-type",
+      "title": "Cinematic 3D Type",
+      "engine": "camera + depth",
+      "tags": [
+        "3d",
+        "premium",
+        "hero"
+      ],
+      "path": "skills/cinematic-3d-type/SKILL.md"
+    },
+    {
+      "id": "hud-sci-fi",
+      "title": "HUD / Sci-Fi",
+      "engine": "tracking + micro-data",
+      "tags": [
+        "ai",
+        "robotics",
+        "diagnostics"
+      ],
+      "path": "skills/hud-sci-fi/SKILL.md"
+    },
+    {
+      "id": "generative-motion",
+      "title": "Generative Motion",
+      "engine": "procedural systems",
+      "tags": [
+        "particles",
+        "procedural",
+        "finale"
+      ],
+      "path": "skills/generative-motion/SKILL.md"
+    }
+  ]
+}
