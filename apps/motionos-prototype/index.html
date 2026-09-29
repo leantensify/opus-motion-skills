@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="MotionOS — turn a creative brief into a directed motion system." />
+  <title>MotionOS — Motion Direction for AI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../README.md" aria-label="MotionOS home">
+      <span class="brand-mark">M</span>
+      <span>MotionOS</span>
+      <span class="alpha">prototype</span>
+    </a>
+    <div class="topbar-note">Powered by 15 motion languages + Motion Director</div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">MOTION DIRECTION, BEFORE GENERATION</p>
+      <h1>Describe the video.<br><span>Get the motion system.</span></h1>
+      <p class="lede">MotionOS turns a raw brief into a story spine, style system, scene timeline, transition logic and implementation-ready JSON.</p>
+    </section>
+
+    <section class="workspace">
+      <aside class="brief-panel panel">
+        <div class="panel-head">
+          <div>
+            <span class="step">01</span>
+            <h2>Creative brief</h2>
+          </div>
+          <span class="status-dot">LOCAL ENGINE</span>
+        </div>
+
+        <label class="field">
+          <span>What are we making?</span>
+          <textarea id="brief" rows="9" placeholder="Create a 30-second launch video for my SaaS...">Create a 30-second launch video for an AI operations platform. Audience: operations leaders. Premium, technical and clear. Open with a strong hook, show how the system connects workflows, include a 37% faster cycle-time metric, show one product UI moment, and end with a confident CTA. Avoid generic cyberpunk.</textarea>
+        </label>
+
+        <div class="field-grid">
+          <label class="field">
+            <span>Duration</span>
+            <div class="input-suffix">
+              <input id="duration" type="number" min="6" max="120" value="30" />
+              <span>sec</span>
+            </div>
+          </label>
+          <label class="field">
+            <span>Format</span>
+            <select id="ratio">
+              <option value="16:9">16:9</option>
+              <option value="9:16">9:16</option>
+              <option value="1:1">1:1</option>
+              <option value="4:5">4:5</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="field">
+          <span>Tone</span>
+          <div class="tone-grid" id="tones">
+            <button type="button" class="tone active" data-tone="premium">Premium</button>
+            <button type="button" class="tone active" data-tone="technical">Technical</button>
+            <button type="button" class="tone" data-tone="bold">Bold</button>
+            <button type="button" class="tone" data-tone="playful">Playful</button>
+            <button type="button" class="tone" data-tone="organic">Organic</button>
+            <button type="button" class="tone" data-tone="editorial">Editorial</button>
+          </div>
+        </div>
+
+        <button id="generate" class="generate">Generate motion direction <span>→</span></button>
+
+        <div class="mini-note">
+          This prototype uses a deterministic local decision engine. No brief or API key leaves your browser.
+        </div>
+      </aside>
+
+      <section class="result-panel panel" id="result">
+        <div class="empty-state" id="empty">
+          <div class="orbit">
+            <span></span><span></span><span></span>
+          </div>
+          <h3>Your direction appears here</h3>
+          <p>Motion Director will diagnose the brief, pick the minimum useful style set and build the timeline.</p>
+        </div>
+
+        <div class="direction hidden" id="direction">
+          <div class="direction-top">
+            <div>
+              <span class="step">02</span>
+              <h2>Motion direction</h2>
+            </div>
+            <div class="actions">
+              <button id="copyPrompt" class="ghost">Copy build prompt</button>
+              <button id="copyJson" class="ghost">Copy JSON</button>
+            </div>
+          </div>
+
+          <div class="diagnosis" id="diagnosis"></div>
+
+          <div class="concept-card">
+            <span>CONCEPT</span>
+            <h3 id="concept"></h3>
+            <p id="takeaway"></p>
+          </div>
+
+          <div class="section-title">
+            <span>03</span>
+            <h3>Style system</h3>
+          </div>
+          <div class="style-system" id="styleSystem"></div>
+
+          <div class="section-title">
+            <span>04</span>
+            <h3>Scene timeline</h3>
+          </div>
+          <div class="timeline" id="timeline"></div>
+
+          <div class="section-title">
+            <span>05</span>
+            <h3>Machine-readable direction</h3>
+          </div>
+          <pre class="json-view" id="jsonView"></pre>
+
+          <div class="next-box">
+            <div>
+              <span class="next-label">NEXT PRODUCT LAYER</span>
+              <h3>Compile this direction into coded scenes.</h3>
+              <p>The JSON is already shaped as the contract for a future Claude/Opus scene builder.</p>
+            </div>
+            <button id="downloadJson" class="secondary">Download direction.json</button>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    Open-source motion intelligence · <a href="https://github.com/leantensify/opus-motion-skills">opus-motion-skills</a>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
