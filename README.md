@@ -207,6 +207,18 @@ python scripts/validate_skills.py
 
 CI runs the same validator on pushes and pull requests.
 
+## Try the MotionOS prototype
+
+The first product layer now lives in [`apps/motionos-prototype/`](apps/motionos-prototype/).
+
+It turns a brief into a creative diagnosis, selected motion languages, timed scenes, transition logic, scene JSON and an implementation-ready build prompt — entirely in the browser with no API key.
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open `http://localhost:8080/apps/motionos-prototype/`.
+
 ## From open-source library to product
 
 This repository can become the intelligence layer of a full motion product:
